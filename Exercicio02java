@@ -1,0 +1,37 @@
+package TED02;
+
+import java.util.Scanner;
+
+public class TEDEX02 {
+	
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		System.out.println("Quantas horas trabalhadas:");
+			double ho_trab = s.nextDouble();
+		System.out.println("Valor da hora trabalhada R$:");
+			double valor_hora = s.nextDouble();
+		
+			double sala_bruto = ho_trab * valor_hora;
+			double descIprf = (sala_bruto * 11) / 100;
+			double descInss = (sala_bruto * 8) / 100;
+			double descSind = (sala_bruto * 5) / 100;
+		
+		System.out.println("Salario bruto: " + sala_bruto);
+		System.out.println("IPRF: 11%: " + descIprf);
+		System.out.println("INSS: 8%: " + descInss);
+		System.out.println("SINDICATO: 5% = R$" + descSind);
+
+			double total_impostos = descIprf + descInss + descSind;
+
+		System.out.printf("Total de impostos = R$ %.2f", total_impostos);
+
+			double salario_liquido = sala_bruto;
+			
+		System.out.printf("\nSalario = R$ %.2f", salario_liquido);
+			
+		s.close();
+	}
+}
+		
+		
